@@ -37,21 +37,31 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-function Dog (dogoid){
-  "use strict";
+function Dog(config){
+ var config = config || {};
 
-  var dogoid = dogoid || {};
-  this.status = 'normal';
+ this.status = 'normal',
+ this.color = config.color
+ console.log(config.color);
+ this.hungry = (config.hungry == false ? false : true);
 
+ // if (this.hungry === true){
+ //   this.hungry === false;
+ // }
 };
 
-function Human(humanStatus){
+function Human(config){
+var config = config || {};
 
-  var humanoid = humanoid;
-
-  this.pet = function(kepler){
-    kepler.status = 'happy';
+  this.pet = function (dog){
+    dog.status = 'happy';
   }
+
+  this.feed = function (dog){
+    dog.hungry = false;
+  }
+
+  this.cool = (config.cool == true ? true : false);
 
 };
 
